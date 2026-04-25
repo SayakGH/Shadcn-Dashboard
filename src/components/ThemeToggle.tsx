@@ -7,7 +7,7 @@ import {
 } from "./ui/dropdown-menu";
 import { useTheme } from "./ThemeProvider";
 
-import { MoonIcon, SunIcon, MonitorIcon, CheckIcon } from "lucide-react";
+import { MoonIcon, SunIcon, MonitorIcon } from "lucide-react";
 
 export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();

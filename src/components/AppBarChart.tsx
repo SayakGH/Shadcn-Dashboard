@@ -12,7 +12,6 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import type { ChartConfig } from "./ui/chart";
 
 import { VENDOR_BREAKDOWN } from "@/constant";
-import { Card } from "./ui/card";
 
 const chartConfig = {
   eu: { label: "EU", color: "var(--chart-1)" },

@@ -1,6 +1,5 @@
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -11,10 +10,7 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -32,7 +28,6 @@ import { DASHBOARD_CARD_MENU } from "@/constant";
 export const DashboardCard = ({
   title,
   description,
-  text,
   buttonText,
   children,
 }: React.PropsWithChildren<Props>) => {
