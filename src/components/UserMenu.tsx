@@ -15,7 +15,6 @@ import {
 import { PlusIcon } from "lucide-react";
 
 import { APP_SIDEBAR } from "@/constant";
-import App from "@/App";
 
 export const UserMenu = () => {
   return (

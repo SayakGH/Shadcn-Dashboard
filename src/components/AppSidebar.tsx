@@ -10,21 +10,18 @@ import {
   SidebarGroup,
   SidebarMenuButton,
   SidebarContent,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
-
-import { useSidebar } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
-
-import { LogOut, LogOutIcon, User } from "lucide-react";
+import { LogOutIcon } from "lucide-react";
 import { Logo } from "@/assets/Logo";
-
 import { APP_SIDEBAR } from "@/constant";
-import { useEffect } from "react";
 import { UserMenu } from "./UserMenu";
 
 export const AppSidebar = () => {
-  const { isMobile } = useSidebar();
+  const { isMobile, state } = useSidebar();
+  const isExpanded = state === "expanded";
 
   return (
     <TooltipProvider>
@@ -77,10 +74,11 @@ export const AppSidebar = () => {
             </SidebarGroup>
           )}
         </SidebarContent>
-        <SidebarFooter className={cn(isMobile && "border-t")}>
+
+        <SidebarFooter className={cn((isMobile || isExpanded) && "border-t")}>
           <SidebarMenu>
-            <SidebarMenuItem className={cn(isMobile && "p-2")}>
-              {isMobile ? (
+            <SidebarMenuItem className={cn((isMobile || isExpanded) && "p-2")}>
+              {isMobile || isExpanded ? (
                 <div className="flex justify-between items-start gap-2">
                   <div className="grid grid-cols-[max-content_minmax(0,1fr)] items-center gap-2">
                     <div className="relative">
@@ -89,7 +87,6 @@ export const AppSidebar = () => {
                         size="36px"
                         round="8px"
                       />
-
                       <div className="absolute bottom-0 right-0 size-2 rounded-full bg-emerald-500 dark:bg-emerald-400 ring-sidebar ring-1"></div>
                     </div>
 
@@ -103,7 +100,7 @@ export const AppSidebar = () => {
                     </div>
                   </div>
 
-                  <Button variant="ghost" size="icon-sm" area-label="Logout">
+                  <Button variant="ghost" size="icon-sm" aria-label="Logout">
                     <LogOutIcon />
                   </Button>
                 </div>

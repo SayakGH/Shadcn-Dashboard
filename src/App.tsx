@@ -13,7 +13,7 @@ import DashboardTable from "./components/DashboardTable";
 function App() {
   return (
     <ThemeProvider defaultTheme="dark">
-      <SidebarProvider open={false}>
+      <SidebarProvider defaultOpen={false}>
         <AppSidebar />
         <SidebarInset>
           <Header />

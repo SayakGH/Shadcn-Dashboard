@@ -6,9 +6,9 @@ import type { ChartConfig } from "./ui/chart";
 import { VENDOR_MONITORED } from "@/constant";
 
 const chartConfig = {
-  monitored: { label: "Total Monitored", color: "var(--chart-3)" },
+  monitored: { label: "Total Monitored ", color: "var(--chart-3)" },
   limit: {
-    label: "Available Limit",
+    label: "Available Limit ",
     color: "var(--color-secondary)",
   },
 } satisfies ChartConfig;
@@ -16,14 +16,14 @@ const chartConfig = {
 function AppRadialChart() {
   const totalLimits = VENDOR_MONITORED[0].monitored + VENDOR_MONITORED[0].limit;
   return (
-    <ChartContainer config={chartConfig} className="w-[200px] h-[110px]">
+    <ChartContainer config={chartConfig} className="w-[220px] h-[150px]">
       <RadialBarChart
         data={VENDOR_MONITORED}
         startAngle={0}
         endAngle={180}
-        innerRadius="90"
-        outerRadius="140"
-        cy={104}
+        innerRadius="90%"
+        outerRadius="130%"
+        cy="80%"
       >
         <PolarRadiusAxis />
         <RadialBar
